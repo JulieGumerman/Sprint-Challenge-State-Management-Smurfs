@@ -14,6 +14,20 @@ export const smurfReducer = (state=initialState, action) => {
                 isFetching: true,
                 error: ""
             }
+        case FETCH_SMURFS_SUCCESS: 
+            console.log("smurfs from state", state);
+            return {
+                ...state, 
+                smurfs: action.payload,       
+                isFetching: false, 
+ 
+            }
+        case FETCH_SMURFS_FAILURE:
+            return {
+                ...state,
+                isFetching: false,
+                error: action.payload
+            }
         default:
             return state;
     }
