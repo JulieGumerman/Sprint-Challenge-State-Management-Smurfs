@@ -22,22 +22,40 @@ In this challenge, you are to build the Smurfs village once again, only this tim
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] What problem does the context API help solve?
-- [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
-- [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
-- [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
-- [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+- [x] What problem does the context API help solve?
+
+  *The context API prevents you from having to do prop drills all over the place because your information is now accessible from children components.*
+
+
+- [x] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+
+  *__Store__ makes the state accessible to your program (with help from Provider, of course. __Reducers__ allow you to update your state (superficially, anyway) based on actions that are taken. __Actions__ show what will happen with payloads and whatnot once a user completes an action within the DOM. __Actions__ take the events within the DOM and transfer them to __Reducers__, which change the state. The updated information is now available from __Store__ and can be reflected in the DOM.*
+
+
+- [x] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+  
+  *Application state is the state of the app at a given time. Component state is where state is within the component and not accessible outside without props. Component state is great if you have pieces that don't need to talk to eachother: it keeps all your other components cleaner. Application state is better if you need all your components to have access to the same material.*
+
+
+- [x] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+  *Thunk and middleware allow for asynchronous JavaScript activity. Now, we can have actions for loading, successfully accessing, and also not retrieving information, rather than having actions just based on DOM activity.*
+
+- [x] What is your favorite state management system you've learned and this sprint? Please explain why!
+
+  *I am a redux girl, probably because it was painful to learn, so it's more valuable to me now that I understand how to use it. It does seem like it will make state management easier as apps become more complex.*
 
 ## Project Set Up
 
 Follow these steps to set up your project:
 
-- [ ] `fork & clone` this repository.
-- [ ] `cd` into the forked copy of this repository.
-- [ ] **RUN** `yarn` to retrieve all `server-side` the dependencies.
-- [ ] **RUN** `yarn start` or `npm start` to get your API up and running on `http://localhost:3333`. This is the **URL** you're going to need to use within your React app in order to make AJAX requests for data.
-- [ ] After your API is up and running, you can open chrome and type in `http://localhost:3333/smurfs`. You should see an empty Array `[]` returned to you. This is an array that your **API** will be using to store our Smurf Data.
-- [ ] **LOOK** at your `smurfs` directory and notice it's just a plain ol' React App that we've built using `create-react-app`.
+- [x] `fork & clone` this repository.
+- [x] `cd` into the forked copy of this repository.
+- [x] **RUN** `yarn` to retrieve all `server-side` the dependencies.
+- [x] **RUN** `yarn start` or `npm start` to get your API up and running on `http://localhost:3333`. This is the **URL** you're going to need to use within your React app in order to make AJAX requests for data.
+- [x] After your API is up and running, you can open chrome and type in `http://localhost:3333/smurfs`. You should see an empty Array `[]` returned to you. This is an array that your **API** will be using to store our Smurf Data.
+- [x] **LOOK** at your `smurfs` directory and notice it's just a plain ol' React App that we've built using `create-react-app`.
 - [ ] **Open** `src/index.js` to make sure that your app is ready to roll with the proper middleware.
 - [ ] **cd** into `smurfs` and run `yarn` to retrieve the client side dependencies.
 - [ ] **RUN** `yarn start` to fire up your React application. There ought to be a pretty little message awaiting you welcoming you to the app. `Follow` the prompting.
