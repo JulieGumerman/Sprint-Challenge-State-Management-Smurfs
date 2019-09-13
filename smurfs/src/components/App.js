@@ -1,7 +1,14 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import "./App.css";
-class App extends Component {
-  render() {
+import { connect } from "react-redux";
+import { getSmurfs } from "../actions/index";
+
+
+const App = ({ getSmurfs}) => {
+
+    useEffect(() => {
+      getSmurfs();
+    }, [getSmurfs])
     return (
       <div className="App">
         <h1>SMURFS! 2.0 W/ Redux</h1>
@@ -10,7 +17,14 @@ class App extends Component {
         <div>Have fun!</div>
       </div>
     );
+}
+
+
+const mapStateToProps = state => {
+  return {
+    name: state.name,
+    height: state.height
   }
 }
 
-export default App;
+export default connect(mapStateToProps, {getSmurfs})(App);
