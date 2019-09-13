@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import { connect } from "react-redux";
-import { getSmurfs } from "../actions/index";
+import { getSmurfs, addMoreSmurfs } from "../actions/index";
 
 
-const App = ({ getSmurfs, smurfs}) => {
+const App = ({ getSmurfs, addMoreSmurfs, smurfs}) => {
   const [newSmurf, setNewSmurf] = useState({name: "", age: "", height: "", id: ""})
 
     const handleChange = event => {
@@ -13,12 +13,14 @@ const App = ({ getSmurfs, smurfs}) => {
 
     const submitHandler = event => {
       event.preventDefault();
+      addMoreSmurfs(newSmurf);
       console.log(newSmurf);
     }
 
-    useEffect(() => {
+    useEffect( ()=> {
       getSmurfs();
     }, [getSmurfs])
+
 
     return (
       <div className="App">
@@ -52,4 +54,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {getSmurfs})(App);
+export default connect(mapStateToProps, {getSmurfs, addMoreSmurfs})(App);
