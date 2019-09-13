@@ -11,7 +11,7 @@ export const addMoreSmurfs = creds => dispatch => {
     axios.post(`http://localhost:3333/smurfs`, creds)
         .then(response => {
             console.log("post request", response);
-            dispatch({ type: ADD_TO_SMURFS, payload: creds})
+            dispatch({ type: ADD_TO_SMURFS, payload: response.data.smurfs})
         })
         .catch(error => console.log("post error", error))
 }

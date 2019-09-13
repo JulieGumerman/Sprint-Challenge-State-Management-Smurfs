@@ -33,7 +33,7 @@ export const smurfReducer = (state=initialState, action) => {
             return {
                 ...state,
                 isFetching: false,
-                smurfs: [...state.smurfs, action.payload]
+                smurfs: action.payload
             }
         default:
             return state;
