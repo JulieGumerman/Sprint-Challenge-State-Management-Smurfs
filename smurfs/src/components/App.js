@@ -26,7 +26,7 @@ const App = ({ getSmurfs, addMoreSmurfs, smurfs}) => {
       <div className="App">
         <h1>SMURFS! 2.0 W/ Redux</h1>
         <div className="smurf-wrapper">
-        {smurfs.map(smurf => <div className="smurf-card"><h3>{smurf.name}</h3><h5>{smurf.age}</h5><h5>{smurf.height}</h5></div>)}
+        {smurfs.map(smurf => <div className="smurf-card"><h3>{smurf.name}</h3><h5>Age: {smurf.age}</h5><h5>Height: {smurf.height}</h5></div>)}
       </div>
       <form>
         <label>Add a new smurf!</label>
